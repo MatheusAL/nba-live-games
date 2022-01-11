@@ -1,0 +1,30 @@
+.card{
+    height: 350px;
+    width: 400px;
+    background-color: whitesmoke;
+    color:black;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-width: 2px;
+    border-color: black;
+}
+.card:hover {
+    background-color: rgb(161 161 170);
+}
+
+.teams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    font-size: 24px;
+}
+
+.score{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
