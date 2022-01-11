@@ -5,7 +5,40 @@ import GameCard from '../components/GameCard'
 import nba from '../public/assets/nba-logo.png'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = ({ data }) => {
+interface Data{
+    date: string
+    home_team: {
+      abbreviation: string,
+      city: string,
+      conference: string,
+      division: string,
+      full_name: string,
+      id: number,
+      name: string
+    },
+    home_team_score: number,
+    id: number,
+    period: number,
+    postseason: boolean,
+    season: number,
+    status: string,
+    time: string,
+    visitor_team: {
+      abbreviation: string,
+      city: string,
+      conference: string,
+      division: string,
+      full_name: string,
+      id: number,
+      name: string
+    },
+    visitor_team_score: number,
+}
+interface DataGame { // renamed from ITrueFalse
+  data: Data[];
+}
+
+const Home: NextPage<DataGame> = ({ data } ) => {
   return (
     <div className={styles.container}>
       <Head>
