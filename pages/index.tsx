@@ -78,7 +78,7 @@ const Home: NextPage<DataGame> = ({ data } ) => {
         </div>
       </nav>
       <main className={styles.main} >
-        <div className='grid grid-cols-4 gap-4 lg:grid-cols-4 sm:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-4 sm:grid-cols-2'>
           {data.map((game: Object, index: number)=>(
             <GameCard key={index} game={data[index]}/>
           ))
