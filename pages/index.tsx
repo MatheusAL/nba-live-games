@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type { NextPage, GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import GameCard from '../components/GameCard'
@@ -89,7 +89,7 @@ const Home: NextPage<DataGame> = ({ data } ) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getServerSideProps: GetServerSideProps = async() => {
   const today = new Date().toISOString().slice(0, 10);
   const res = await fetch(`https://balldontlie.io/api/v1/games?start_date=${today}&end_date=${today}`);
   const data = await res.json();
