@@ -46,7 +46,7 @@ const Home: NextPage<DataGame> = ({ data } ) => {
         <meta name="description" content="Find NBA live games" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="h-2/5 w-100 flex items-center justify-between flex-wrap bg-blue-500 p-6">
+      <nav className="h-2/5 w-100 flex items-center justify-between flex-wrap bg-sky-900 p-6">
         {/* <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
@@ -59,22 +59,6 @@ const Home: NextPage<DataGame> = ({ data } ) => {
               width={'250px'}
               height={'100px'}
             />
-        </div>
-        <div className="w-full flex">
-          <div className="flex flex-grow lg:flex lg:w-auto">
-            <div className="text-sm lg:flex-grow">
-              <a href="#" className="flex justify-center mt-4 lg:mt-0 text-white text-lg text-bold hover:text-black">
-                Eastern Conference
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-grow lg:flex lg:w-auto">
-            <div className="text-sm lg:flex-grow">
-              <a href="#" className="flex justify-center mt-4 lg:mt-0 text-white text-lg text-bold hover:text-black">
-                Western Conference
-              </a>
-            </div>
-          </div>
         </div>
       </nav>
       <main className={styles.main} >
