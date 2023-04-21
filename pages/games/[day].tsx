@@ -1,7 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Head from 'next/head'
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
 import nba from '../../public/assets/nba-logo.png';
@@ -62,7 +61,7 @@ const Games: NextPage<DataGame> = ({ data } ) => {
                   height={'100px'}
                 />
             </div>
-            <div className="w-full flex justify-around font-bold text-lg text-white">
+            <div className="w-full flex justify-around font-bold text-xl text-white">
               <div className="hover:text-orange-500">
                 <Link href="/games/yesterday">
                   <span>Yesterday</span>
