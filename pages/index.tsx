@@ -4,8 +4,11 @@ import Image from 'next/image'
 import GameCard from '../components/GameCard'
 import nba from '../public/assets/nba-logo.png'
 import styles from '../styles/Home.module.css'
+import useSWR from 'swr'
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-interface Data{
+interface Data {
     date: string
     home_team: {
       abbreviation: string,
@@ -38,6 +41,28 @@ interface DataGame { // renamed from ITrueFalse
   data: Data[];
 }
 
+// const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+/* const getData = async (day: string) => {
+  const date = new Date();
+  let queryDay: string;
+  if (day === 'today') {
+    queryDay = date.toISOString().slice(0, 10);
+  } else if (day === 'yesterday') {
+    date.setDate(date.getDate() - 1);
+    queryDay = date.toISOString().slice(0, 10);
+  } else {
+    date.setDate(date.getDate() + 1);
+    queryDay = date.toISOString().slice(0, 10);
+  }
+  const { data, error } = useSWR(`https://balldontlie.io/api/v1/games?start_date=${queryDay}&end_date=${queryDay}`, fetcher)
+  // const res = await fetch(`https://balldontlie.io/api/v1/games?start_date=${queryDay}&end_date=${queryDay}`);
+  //const { data, error } = await res.json();
+
+  return {
+    props: { data: data.data }
+  }
+} */
 const Home: NextPage<DataGame> = ({ data } ) => {
   return (
     <div className={styles.container}>
@@ -60,14 +85,32 @@ const Home: NextPage<DataGame> = ({ data } ) => {
               height={'100px'}
             />
         </div>
+        <div className="w-full flex justify-around font-bold text-lg text-white">
+          <div className="hover:text-orange-500">
+            <Link href="/games/yesterday">
+              <span>Yesterday</span>
+            </Link>
+          </div>
+          <div className="hover:text-orange-500">
+            <Link href="/games/today">
+              <span>Today</span>
+            </Link>
+          </div>
+          <div className="hover:text-orange-500">
+            <Link href="/games/tomorrow">
+              <span>Tomorrow</span>
+            </Link>
+          </div>
+        </div>
       </nav>
       <main className={styles.main} >
-        <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-4 sm:grid-cols-2'>
+        {/* <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-4 sm:grid-cols-2'>
           {data.map((game: Object, index: number)=>(
             <GameCard key={index} game={data[index]}/>
           ))
           }
-        </div>
+        </div> */}
+        <h1>Home</h1>
       </main>
     </div>
   )

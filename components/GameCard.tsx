@@ -36,6 +36,12 @@ interface Game {
 
 
 const GameCard: NextPage<Game> = ({ game }) => { 
+  function formatDateString (date: string) {
+    const dateObj = new Date(date);
+    return dateObj.toLocaleTimeString();
+
+  }
+  
   const { 
     visitor_team_score,
     home_team_score
@@ -73,7 +79,7 @@ const GameCard: NextPage<Game> = ({ game }) => {
           </div> 
         </div>
         <div className="flex justify-center w-100">
-          <p className="flex items-center justify-center w-2/4 rounded-full tracking-wider border-2 border-black bg-black text-white h-10">{game.time === '' ? game.status : game.time}</p>
+          <p className="flex items-center justify-center w-2/4 rounded-full tracking-wider border-2 border-black bg-black text-white h-10">{game.time === 'Final' ? game.status : formatDateString(game.status)}</p>
         </div>
         
       </div>
