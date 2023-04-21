@@ -1,5 +1,9 @@
 # NBA Live Games
 
+## Description
+
+The NBA Live Match Tracker app is a mobile application designed for basketball enthusiasts who want to stay up-to-date with the latest statistics from the NBA. With this application, users can follow their favorite teams in real-time, as well as get access to live scores, and game stats.
+
 ## Project 
 
 This is a Next.js + Typescript project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
